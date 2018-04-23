@@ -14,12 +14,22 @@ public class Number {
 	Number(int number, int size) {
 		this.number = number;
 		this.size = size;
+		this.columns = this.size + DELTA_COLUMNS;
+		this.rows = (this.size*FACTOR_ROWS) + DELTA_ROWS;
+		this.visualRepresentation = new char[rows][columns];
+		initializeEmptyMatrix();
 		initializeVisualRepresentation();
 	}
 	public void initializeVisualRepresentation(){
-		this.columns = this.size + DELTA_COLUMNS;
-		this.rows = (this.size*FACTOR_ROWS) + DELTA_ROWS;
-		visualRepresentation = new char[rows][columns];
+		System.out.println("visualre");
+		switch(number) {
+			case 1:
+				drawVertical(columns-1);
+				break;
+			default:
+				break;
+		}
+		System.out.println("visualre");
 	}
 	public int getNumber() {
 		return number;
@@ -36,18 +46,31 @@ public class Number {
 	public char[][] getVisualRepresentation() {
 		return visualRepresentation;
 	}
-	public void drawVertical(int row) {
-		for(int i = 0; i< columns; i++) {
-			visualRepresentation[row][i] = VERTICAL_SEPARATOR;
+	public void drawVertical(int column) {
+		System.out.println("drawvertica:"+column);
+		for(int i = 0; i< rows; i++) {
+			System.out.println(i+":"+column);
+			if(i != 0 && i != rows/2 && i != rows-1) {
+				System.out.println(i+":"+column);
+				visualRepresentation[i][column] = VERTICAL_SEPARATOR;
+			}
 		}
 	}
-	public void drawHorizontal(int column) {
+	public void drawHorizontal(int row) {
 		for(int j = 0; j < rows; j++) {
-			visualRepresentation[j][column] = HORIZONTAL_SEPARATOR;
+			visualRepresentation[row][j] = HORIZONTAL_SEPARATOR;
+		}
+	}
+	public void initializeEmptyMatrix() {
+		for(int i = 0; i < rows; i ++) {
+			for(int j = 0; j < columns; j++) {
+				visualRepresentation[i][j] = ' ';
+			}
 		}
 	}
 	@Override
 	public String toString() {
+		System.out.println("toString");
 		// TODO map from matrix to string representation
 		String visualNumber = "";
 		for(int  i = 0; i < rows; i++) {
@@ -56,6 +79,7 @@ public class Number {
 			}
 			visualNumber += LCD.BREAK_LINE;
 		}
+		System.out.println(visualNumber);
 		return visualNumber;
 	}
 }

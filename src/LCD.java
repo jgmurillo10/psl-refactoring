@@ -31,10 +31,12 @@ public class LCD {
 		return response;
 	}
 	public String process(int size, int number) {
+		System.out.println("process");
 		String cache = memo.get(number+MEMO_SEPARATOR+size);
 		if ( cache == null ) {
 			Number n = new Number(number, size);
 			memo.put(number+MEMO_SEPARATOR+size, n.toString());
+			System.out.println("got number:\n"+n.toString());
 			return n.toString();
 		}
 		return cache;
