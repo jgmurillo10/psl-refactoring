@@ -38,4 +38,6 @@ The parser receives one line string `n,m`where `n` is the size of the output and
 
 If you want to stop the execution just type `0,0`
 
-(or import the project into your favorite IDE and run the Main class)
+<hr>
+
+Also, you can import the project into your favorite IDE and run the Main class)
