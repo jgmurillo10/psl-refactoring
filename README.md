@@ -1,16 +1,16 @@
 # psl-refactoring
-This is a parser from raw numbers to LCD display numbers
+This is a parser from raw numbers to LCD numbers.
 
 ![Demo](./demopsl_low.gif)
 
 ## Instructions 
 
-* Clone the repo 
+### 1. Clone the repo:
 ```
 git clone https://github.com/jgmurillo10/psl-refactoring.git
 ```
 
-* Open your terminal and run
+### 2. Open your terminal and run:
 
 ```
 cd psl-refactoring/src
@@ -19,7 +19,7 @@ java Main
 
 ```
 
-* Play with the parser
+### 3. Play with the parser
 
 The parser receives one line string `n,m`where `n` is the size of the output and `m` is the integer number we want to parse.
 
@@ -34,7 +34,7 @@ The parser receives one line string `n,m`where `n` is the size of the output and
 
 ```
 
-* Stop the execution
+### Stop the execution
 
 If you want to stop the execution just type `0,0`
 
