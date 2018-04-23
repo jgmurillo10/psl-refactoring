@@ -40,4 +40,4 @@ If you want to stop the execution just type `0,0`
 
 <hr>
 
-Also, you can import the project into your favorite IDE and run the Main class)
+Also, you can import the project into your favorite IDE and run the Main class.
